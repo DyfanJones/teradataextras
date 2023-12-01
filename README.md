@@ -1,6 +1,6 @@
 # README #
 
-**NOTE:** Disclaimer: `teradataml` is not a product of or supported by Teradata.
+**Disclaimer:** `teradataextras` is not a product of or supported by Teradata.
 
 This is a thin wrapper around `teradataml`. This goal of this repo is to get better performance from teradata when working in python.
 
