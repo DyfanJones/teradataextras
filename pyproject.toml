@@ -1,0 +1,44 @@
+########## Build System ##########
+# Reference https://github.com/pydata/xarray/blob/main/pyproject.toml
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]>=6.4", "wheel"]
+build-backend = "setuptools.build_meta"
+
+########## Project ##########
+[project]
+name = "teradataextras"
+description = "Thin wrapper of Teradataml"
+version = "0.1.0"
+license = { file = "LICENSE" }
+authors = [{ name = "Dyfan Jones", email = "dyfan.r.jones@gmail.com" }]
+readme = "README.md"
+classifiers = []
+dependencies = [
+    "sqlalchemy==1.4.46",
+    "teradataml==17.10.00.01",
+    "pandas",
+    "polars>=0.19.12",
+    "boto3",
+    "importlib_metadata",
+    "packaging",
+]
+
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+all = ["teradataextras[cache]"]
+
+oracle = ["cx_Oracle"]
+
+cache = ["pyarrow"]
+
+test = ["pytest==6.2.5", "mock==4.0.3"]
+
+########## Tool - Setuptools ##########
+[tool.setuptools.packages.find]
+include = ["teradataextras*"]
+
+[tool.black]
+line-length = 110
+target-version = ['py36', 'py37', 'py38']
+skip-string-normalization = true
