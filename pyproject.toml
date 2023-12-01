@@ -28,8 +28,6 @@ requires-python = ">=3.9"
 [project.optional-dependencies]
 all = ["teradataextras[cache]"]
 
-oracle = ["cx_Oracle"]
-
 cache = ["pyarrow"]
 
 test = ["pytest==6.2.5", "mock==4.0.3"]
